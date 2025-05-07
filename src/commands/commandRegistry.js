@@ -5,6 +5,7 @@ const { ApplicationCommandOptionType, ChatInputCommandInteraction, MessageFlags,
 
 const manageRoles = 1 << 28;
 const everyone = 1 << 11;
+const posiitionOffset = 2;
 
 //comment
 class CommandRegistry{
@@ -229,7 +230,7 @@ function positionHandler(interaction) {
   let posiition = get(interaction, 'position') ?? -1;
 
   if(posiition == -1 || posiition > cosmeticRoleRegistry.roleRegistry.length) {
-    posiition = cosmeticRoleRegistry.roleRegistry.length + 1
+    posiition = cosmeticRoleRegistry.roleRegistry.length + posiitionOffset
   } 
   
 
